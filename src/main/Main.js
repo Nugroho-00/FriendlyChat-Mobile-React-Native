@@ -36,6 +36,11 @@ export default function Main() {
                     name="ChatPage"
                     component={ChatScreen}
                 />
+                  <Stack.Screen
+                    options={{headerShown: false}}
+                    name="ListChat"
+                    component={ListChat}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );

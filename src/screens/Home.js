@@ -9,6 +9,10 @@ export default function Home({navigation}) {
     navigation.navigate('ChatPage')
   }
 
+  function ListChat() {
+    navigation.navigate('ListChat')
+  }
+
   return (
     <Container style={style.container}>
       <Header style={style.header}>
@@ -25,10 +29,10 @@ export default function Home({navigation}) {
           <Icon style={style.icon} name="search" type="FontAwesome5"/>
         </TouchableOpacity>
         </View>    
-      </Header>
+      </Header> 
       <Content padder>
-        <ScrollView>
-          {Array(10).fill(        
+        <ScrollView vertical>     
+          {Array(5).fill(        
             <List>       
             <ListItem>       
               <View>
@@ -45,9 +49,14 @@ export default function Home({navigation}) {
                   </View>                 
               </ListItem>               
             </List>
-          )}      
-        </ScrollView>    
+          )}           
+        </ScrollView>           
       </Content>
+      <View style={style.list}>
+          <TouchableOpacity onPress={ListChat}>
+          <Icon style={style.users} name="user-friends" type="FontAwesome5"/>
+          </TouchableOpacity>
+          </View>   
     </Container>
   );
 }
@@ -87,5 +96,22 @@ const style = StyleSheet.create({
   },
   time: {
     marginBottom: 15,
-  }
+  },
+  list: {
+    position: 'absolute',
+    bottom: 25,
+    right: 25,
+    borderColor: '#0082FF',
+    borderWidth: 1,
+    borderRadius: 30,
+    backgroundColor: '#0082FF',
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  users: {
+    fontSize: 35,
+    color: 'white',
+  },
 })
