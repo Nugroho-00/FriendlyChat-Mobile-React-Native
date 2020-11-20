@@ -14,7 +14,7 @@ export default function Home({navigation}) {
       <Header style={style.header}>
         <View style={style.menu}>
         <TouchableOpacity>
-          <Icon style={style.icon} name="menu" type="font-awesome"/>
+          <Icon style={style.icon} name="bars" type="FontAwesome5"/>
         </TouchableOpacity>
         </View>      
         <Body>
@@ -22,7 +22,7 @@ export default function Home({navigation}) {
         </Body>
         <View style={style.search}>
         <TouchableOpacity>
-          <Icon style={style.icon} name="search" type="font-awesome"/>
+          <Icon style={style.icon} name="search" type="FontAwesome5"/>
         </TouchableOpacity>
         </View>    
       </Header>

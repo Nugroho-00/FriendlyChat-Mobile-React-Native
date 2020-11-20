@@ -1,18 +1,21 @@
 import React from 'react';
-import { Container, Header, Content, Thumbnail, Body, Right, Button, Icon, Text } from 'native-base';
+import { Container, Header, Content, Thumbnail, Body, Icon, Text } from 'native-base';
 import { StyleSheet, View, TouchableOpacity } from 'react-native'
 
 import Ava from '../assets/images/avatar.png'
 
 export default function ChatScreen({navigation}) {
-  // function Chat() {
-  //   navigation.navigate('ListChat')
-  // }
+  function HomeChat() {
+    navigation.navigate('Home')
+  }
 
   return (
     <Container>
       <Header style={style.header}>
-        <View style={style.thumb}>
+        <TouchableOpacity onPress={HomeChat}>
+        <Icon style={style.icon1} name='arrow-left' type="FontAwesome5" />
+        </TouchableOpacity>   
+        <View style={style.thumb}>       
         <Thumbnail style={style.avatar} source={Ava}/>
         </View>
           <Body>
@@ -21,7 +24,7 @@ export default function ChatScreen({navigation}) {
         </Body>
         <View>
         <TouchableOpacity>
-            <Icon style={style.icon} name='ellipsis-v' type="FontAwesome5" />
+            <Icon style={style.icon2} name='ellipsis-v' type="FontAwesome5" />
         </TouchableOpacity>
         </View>     
       </Header>
@@ -35,6 +38,7 @@ export default function ChatScreen({navigation}) {
 const style = StyleSheet.create({
   header: {
     alignItems: 'center',
+    backgroundColor: 'black',
   },
   avatar: {
     width: 45,
@@ -42,15 +46,19 @@ const style = StyleSheet.create({
   },
   thumb: {
     paddingRight: 10,
-    marginLeft: 10
+    marginLeft: 25
   },
   text: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'white',
   },
-  icon: {
+  icon2: {
     color: 'white',
     paddingRight: 10
+  },
+  icon1: {
+    color: 'white',
+    paddingLeft: 10
   },
 })
